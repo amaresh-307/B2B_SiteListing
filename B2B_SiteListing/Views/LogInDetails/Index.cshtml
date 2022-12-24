@@ -1,0 +1,629 @@
+﻿@model LogInDetailsViewModel
+@{
+    ViewData["Title"] = "LogIn Details";
+}
+
+<div class="container-scroller">
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="clearfix">
+                            <div class="col-md-9">
+                                <div class="main_content_box bg-white boxshadow">
+
+
+                                    <div class="pagecontent">
+                                        <h4 align="center"><strong>Fill up details (Membership Activation may be taken 24 to 48 Hours)</strong></h4>
+                                      <form asp-action="Index" method="post" class="registration_form">   
+                                            <div class="form-group row mt-2">
+                                                <label asp-for="Title" class="col-sm-4 col-form-label">Title </label>
+                                                <div class="col-sm-8">
+
+                                                    <select asp-for="Title" class="form-control">
+                                                        <option>Mr.</option>
+                                                        <option>Mrs.</option>
+                                                        <option>Ms.</option>
+                                                        <option>Dr.</option>
+                                                        <option>Er.</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mt-2">
+                                                <label asp-for="OperatingPersonName" class="col-sm-4 col-form-label">Operating Person's Name</label>
+                                                <div class="col-sm-8">
+
+                                                    <input asp-for="OperatingPersonName" type="text" class="form-control" placeholder="Enter Your Name" required="This field is required.">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label asp-for="Designation" class="col-sm-4 col-form-label">
+
+                                                    Designation*
+                                                </label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" asp-for="Designation" class="form-control" placeholder="Enter Designation" required="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label asp-for="FunctionalDept" class="col-sm-4 col-form-label">
+
+                                                    Your Functional Department
+                                                </label>
+                                                <div class="col-sm-8">
+                                                    <select asp-for="FunctionalDept" name="Functional Departments" class="form-control">
+                                                        <option value="Select">Select department</option>
+                                                        <option value="management">Management</option>
+                                                        <option value="sales">Sales</option>
+                                                        <option value="marketingandmedia">Marketing & Media</option>
+                                                        <option value="purchase">Purchase</option>
+                                                        <option value="humanresource">Human Resource</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mt-4">
+                                                <label asp-for="AlternateEmail" class="col-sm-4 col-form-label">Alternate Email Address </label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" asp-for="AlternateEmail" placeholder="Alternate email address" required="">
+                                                </div>
+                                                @* <label asp-for="AlternateEmail" class="col-sm-4 col-form-label">Verify Email Address now </label>*@                                            </div>
+                                            <div class="form-group row mt-2">
+                                                <label for="mobile" class="col-sm-4 col-form-label">
+
+                                                    Mobile*
+                                                </label>
+                                                <div class="col-sm-3">
+                                                    <select asp-for="ISD_Mobile" class="form-control form-control-sm">
+                                                        <option selected="selected" id="isdcodes" value="">Select ISD Code</option>
+                                                        <option value="+93" Title="AF">Afghanistan (+93)</option>
+                                                        <option value="+355" Title="AL">Albania (+355)</option>
+                                                        <option value="+213" Title="DZ">Algeria (+213)</option>
+                                                        <option value="+1684" Title="AS">American Samoa (+1684)</option>
+                                                        <option value="+376" Title="AD">Andorra (+376)</option>
+                                                        <option value="+244" Title="AO">Angola (+244)</option>
+                                                        <option value="+1264" Title="AI">Anguilla (+1264)</option>
+                                                        <option value="+672" Title="AQ">Antarctica (+672)</option>
+                                                        <option value="+1268" Title="AG">Antigua and Barbuda (+1268)</option>
+                                                        <option value="+54" Title="AR">Argentina (+54)</option>
+                                                        <option value="+374" Title="AM">Armenia (+374)</option>
+                                                        <option value="+297" Title="AW">Aruba (+297)</option>
+                                                        <option value="+61" Title="AU">Australia (+61)</option>
+                                                        <option value="+43" Title="AT">Austria (+43)</option>
+                                                        <option value="+994" Title="AZ">Azerbaijan (+994)</option>
+                                                        <option value="+1242" Title="BS">Bahamas, The (+1242)</option>
+                                                        <option value="+973" Title="BH">Bahrain (+973)</option>
+                                                        <option value="+880" Title="BD">Bangladesh (+880)</option>
+                                                        <option value="+1246" Title="BB">Barbados (+1246)</option>
+                                                        <option value="+375" Title="BY">Belarus (+375)</option>
+                                                        <option value="+32" Title="BE">Belgium (+32)</option>
+                                                        <option value="+501" Title="BZ">Belize (+501)</option>
+                                                        <option value="+229" Title="BJ">Benin (+229)</option>
+                                                        <option value="+1441" Title="BM">Bermuda (+1441)</option>
+                                                        <option value="+975" Title="BT">Bhutan (+975)</option>
+                                                        <option value="+591" Title="BO">Bolivia (+591)</option>
+                                                        <option value="+387" Title="BA">Bosnia and Herzegovina (+387)</option>
+                                                        <option value="+267" Title="BW">Botswana (+267)</option>
+                                                        <option value="+55" Title="BR">Brazil (+55)</option>
+                                                        <option value="+1284" Title="VG">British Virgin Islands (+1284)</option>
+                                                        <option value="+673" Title="BN">Brunei (+673)</option>
+                                                        <option value="+359" Title="BG">Bulgaria (+359)</option>
+                                                        <option value="+226" Title="BF">Burkina Faso (+226)</option>
+                                                        <option value="+257" Title="BI">Burundi (+257)</option>
+                                                        <option value="+238" Title="CV">Cabo Verde (+238)</option>
+                                                        <option value="+855" Title="KH">Cambodia (+855)</option>
+                                                        <option value="+237" Title="CM">Cameroon (+237)</option>
+                                                        <option value="+1" Title="CA">Canada (+1)</option>
+                                                        <option value="+1345" Title="KY">Cayman Islands (+1345)</option>
+                                                        <option value="+236" Title="CF">Central African Republic (+236)</option>
+                                                        <option value="+235" Title="TD">Chad (+235)</option>
+                                                        <option value="+56" Title="CL">Chile (+56)</option>
+                                                        <option value="+86" Title="CN">China (+86)</option>
+                                                        <option value="+57" Title="CO">Colombia (+57)</option>
+                                                        <option value="+269" Title="KM">Comoros (+269)</option>
+                                                        <option value="+242" Title="CG">Congo (+242)</option>
+                                                        <option value="+243" Title="CD">Congo (DRC) (+243)</option>
+                                                        <option value="+682" Title="CK">Cook Islands (+682)</option>
+                                                        <option value="+506" Title="CR">Costa Rica (+506)</option>
+                                                        <option value="+225" Title="CI">C&#244;te d’Ivoire (+225)</option>
+                                                        <option value="+385" Title="HR">Croatia (+385)</option>
+                                                        <option value="+53" Title="CU">Cuba (+53)</option>
+                                                        <option value="+5999" Title="CW">Cura&#231;ao (+5999)</option>
+                                                        <option value="+357" Title="CY">Cyprus (+357)</option>
+                                                        <option value="+420" Title="CZ">Czech Republic (+420)</option>
+                                                        <option value="+45" Title="DK">Denmark (+45)</option>
+                                                        <option value="+253" Title="DJ">Djibouti (+253)</option>
+                                                        <option value="+1767" Title="DM">Dominica (+1767)</option>
+                                                        <option value="+18" Title="DO">Dominican Republic (+18)</option>
+                                                        <option value="+593" Title="EC">Ecuador (+593)</option>
+                                                        <option value="+20" Title="EG">Egypt (+20)</option>
+                                                        <option value="+503" Title="SV">El Salvador (+503)</option>
+                                                        <option value="+240" Title="GQ">Equatorial Guinea (+240)</option>
+                                                        <option value="+291" Title="ER">Eritrea (+291)</option>
+                                                        <option value="+372" Title="EE">Estonia (+372)</option>
+                                                        <option value="+251" Title="ET">Ethiopia (+251)</option>
+                                                        <option value="+500" Title="FK">Falkland Islands (+500)</option>
+                                                        <option value="+298" Title="FO">Faroe Islands (+298)</option>
+                                                        <option value="+679" Title="FJ">Fiji (+679)</option>
+                                                        <option value="+358" Title="FI">Finland (+358)</option>
+                                                        <option value="+33" Title="FR">France (+33)</option>
+                                                        <option value="+594" Title="GF">French Guiana (+594)</option>
+                                                        <option value="+689" Title="PF">French Polynesia(+689)</option>
+                                                        <option value="+241" Title="GA">Gabon (+241)</option>
+                                                        <option value="+220" Title="GM">Gambia, The (+220)</option>
+                                                        <option value="+995" Title="GE">Georgia (+995)</option>
+                                                        <option value="+49" Title="DE">Germany (+49)</option>
+                                                        <option value="+233" Title="GH">Ghana (+233)</option>
+                                                        <option value="+350" Title="GI">Gibraltar (+350)</option>
+                                                        <option value="+30" Title="GR">Greece (+30)</option>
+                                                        <option value="+299" Title="GL">Greenland (+299)</option>
+                                                        <option value="+1473" Title="GD">Grenada (+1473)</option>
+                                                        <option value="+590" Title="GP">Guadeloupe (+590)</option>
+                                                        <option value="+1671" Title="GU">Guam (+1671)</option>
+                                                        <option value="+502" Title="GT">Guatemala (+502)</option>
+                                                        <option value="+224" Title="GN">Guinea (+224)</option>
+                                                        <option value="+245" Title="GW">Guinea-Bissau (+245)</option>
+                                                        <option value="+592" Title="GY">Guyana (+592)</option>
+                                                        <option value="+509" Title="HT">Haiti (+509)</option>
+                                                        <option value="+3" Title="VA">Holy See (Vatican City) (+3)</option>
+                                                        <option value="+504" Title="HN">Honduras (+504)</option>
+                                                        <option value="+852" Title="HK">Hong Kong SAR (+852)</option>
+                                                        <option value="+36" Title="HU">Hungary (+36)</option>
+                                                        <option value="+354" Title="IS">Iceland (+354)</option>
+                                                        <option value="+91" Title="IN">India (+91)</option>
+                                                        <option value="+62" Title="ID">Indonesia (+62)</option>
+                                                        <option value="+98" Title="IR">Iran (+98)</option>
+                                                        <option value="+964" Title="IQ">Iraq (+964)</option>
+                                                        <option value="+353" Title="IE">Ireland, Republic of (+353)</option>
+                                                        <option value="+972" Title="IL">Israel (+972)</option>
+                                                        <option value="+39" Title="IT">Italy (+39)</option>
+                                                        <option value="+1876" Title="JM">Jamaica (+1876)</option>
+                                                        <option value="+81" Title="JP">Japan (+81)</option>
+                                                        <option value="+962" Title="JO">Jordan (+962)</option>
+                                                        <option value="+7" Title="KZ">Kazakhstan (+7)</option>
+                                                        <option value="+254" Title="KE">Kenya (+254)</option>
+                                                        <option value="+686" Title="KI">Kiribati (+686)</option>
+                                                        <option value="+82" Title="KR">Korea (+82)</option>
+                                                        <option value="+965" Title="KW">Kuwait (+965)</option>
+                                                        <option value="+996" Title="KG">Kyrgyzstan (+996)</option>
+                                                        <option value="+856" Title="LA">Laos (+856)</option>
+                                                        <option value="+371" Title="LV">Latvia (+371)</option>
+                                                        <option value="+961" Title="LB">Lebanon (+961)</option>
+                                                        <option value="+266" Title="LS">Lesotho (+266)</option>
+                                                        <option value="+231" Title="LR">Liberia (+231)</option>
+                                                        <option value="+218" Title="LY">Libya (+218)</option>
+                                                        <option value="+423" Title="LI">Liechtenstein (+423)</option>
+                                                        <option value="+370" Title="LT">Lithuania (+370)</option>
+                                                        <option value="+352" Title="LU">Luxembourg (+352)</option>
+                                                        <option value="+853" Title="MO">Macao SAR (+853)</option>
+                                                        <option value="+389" Title="MK">Macedonia, FYRO (+389)</option>
+                                                        <option value="+261" Title="MG">Madagascar (+261)</option>
+                                                        <option value="+265" Title="MW">Malawi (+265)</option>
+                                                        <option value="+60" Title="MY">Malaysia (+60)</option>
+                                                        <option value="+960" Title="MV">Maldives (+960)</option>
+                                                        <option value="+223" Title="ML">Mali (+223)</option>
+                                                        <option value="+356" Title="MT">Malta (+356)</option>
+                                                        <option value="+692" Title="MH">Marshall Islands (+692)</option>
+                                                        <option value="+596" Title="MQ">Martinique (+596)</option>
+                                                        <option value="+222" Title="MR">Mauritania (+222)</option>
+                                                        <option value="+230" Title="MU">Mauritius (+230)</option>
+                                                        <option value="+269" Title="YT">MayoTitlee (+269)</option>
+                                                        <option value="+52" Title="MX">Mexico (+52)</option>
+                                                        <option value="+691" Title="FM">Micronesia (+691)</option>
+                                                        <option value="+373" Title="MD">Moldova (+373)</option>
+                                                        <option value="+377" Title="MC">Monaco (+377)</option>
+                                                        <option value="+976" Title="MN">Mongolia (+976)</option>
+                                                        <option value="+382" Title="ME">Montenegro (+382)</option>
+                                                        <option value="+1664" Title="MS">Montserrat (+1664)</option>
+                                                        <option value="+212" Title="MA">Morocco (+212)</option>
+                                                        <option value="+258" Title="MZ">Mozambique (+258)</option>
+                                                        <option value="+95" Title="MM">Myanmar (+95)</option>
+                                                        <option value="+264" Title="NA">Namibia (+264)</option>
+                                                        <option value="+674" Title="NR">Nauru (+674)</option>
+                                                        <option value="+977" Title="NP">Nepal (+977)</option>
+                                                        <option value="+31" Title="NL">Netherlands (+31)</option>
+                                                        <option value="+687" Title="NC">New Caledonia (+687)</option>
+                                                        <option value="+64" Title="NZ">New Zealand (+64)</option>
+                                                        <option value="+505" Title="NI">Nicaragua (+505)</option>
+                                                        <option value="+227" Title="NE">Niger (+227)</option>
+                                                        <option value="+234" Title="NG">Nigeria (+234)</option>
+                                                        <option value="+683" Title="NU">Niue (+683)</option>
+                                                        <option value="+1670" Title="MP">Northern Mariana Islands (+1670)</option>
+                                                        <option value="+850" Title="KP">North Korea (+850)</option>
+                                                        <option value="+47" Title="NO">Norway (+47)</option>
+                                                        <option value="+968" Title="OM">Oman (+968)</option>
+                                                        <option value="+92" Title="PK">Pakistan (+92)</option>
+                                                        <option value="+680" Title="PW">Palau (+680)</option>
+                                                        <option value="+970" Title="PS">Palestinian Authority (+970)</option>
+                                                        <option value="+507" Title="PA">Panama (+507)</option>
+                                                        <option value="+675" Title="PG">Papua New Guinea (+675)</option>
+                                                        <option value="+595" Title="PY">Paraguay (+595)</option>
+                                                        <option value="+51" Title="PE">Peru (+51)</option>
+                                                        <option value="+63" Title="PH">Philippines (+63)</option>
+                                                        <option value="+48" Title="PL">Poland (+48)</option>
+                                                        <option value="+351" Title="PT">Portugal (+351)</option>
+                                                        <option value="+1787" Title="PR">Puerto Rico (+1787)</option>
+                                                        <option value="+974" Title="QA">Qatar (+974)</option>
+                                                        <option value="+262" Title="RE">Reunion (+262)</option>
+                                                        <option value="+40" Title="RO">Romania (+40)</option>
+                                                        <option value="+7" Title="RU">Russia (+7)</option>
+                                                        <option value="+250" Title="RW">Rwanda (+250)</option>
+                                                        <option value="+1869" Title="KN">Saint KiTitles and Nevis (+1869)</option>
+                                                        <option value="+1758" Title="LC">Saint Lucia (+1758)</option>
+                                                        <option value="+508" Title="PM">Saint Pierre and Miquelon (+508)</option>
+                                                        <option value="+1784" Title="VC">Saint Vincent and the Grenadines (+1784)</option>
+                                                        <option value="+685" Title="WS">Samoa (+685)</option>
+                                                        <option value="+378" Title="SM">San Marino (+378)</option>
+                                                        <option value="+239" Title="ST">S&#227;o Tom&#233; and Pr&#237;ncipe (+239)</option>
+                                                        <option value="+966" Title="SA">Saudi Arabia (+966)</option>
+                                                        <option value="+221" Title="SN">Senegal (+221)</option>
+                                                        <option value="+381" Title="RS">Serbia (+381)</option>
+                                                        <option value="+248" Title="SC">Seychelles (+248)</option>
+                                                        <option value="+232" Title="SL">Sierra Leone (+232)</option>
+                                                        <option value="+65" Title="SG">Singapore (+65)</option>
+                                                        <option value="+1721" Title="SX">Sint Maarten (+1721)</option>
+                                                        <option value="+421" Title="SK">Slovakia (+421)</option>
+                                                        <option value="+386" Title="SI">Slovenia (+386)</option>
+                                                        <option value="+677" Title="SB">Solomon Islands (+677)</option>
+                                                        <option value="+252" Title="SO">Somalia (+252)</option>
+                                                        <option value="+27" Title="ZA">South Africa (+27)</option>
+                                                        <option value="+34" Title="ES">Spain (+34)</option>
+                                                        <option value="+94" Title="LK">Sri Lanka (+94)</option>
+                                                        <option value="+290" Title="SH">St Helena, Ascension, Tristan da Cunha (+290)</option>
+                                                        <option value="+249" Title="SD">Sudan (+249)</option>
+                                                        <option value="+597" Title="SR">Suriname (+597)</option>
+                                                        <option value="+268" Title="SZ">Swaziland (+268)</option>
+                                                        <option value="+46" Title="SE">Sweden (+46)</option>
+                                                        <option value="+41" Title="CH">Switzerland (+41)</option>
+                                                        <option value="+963" Title="SY">Syria (+963)</option>
+                                                        <option value="+886" Title="TW">Taiwan (+886)</option>
+                                                        <option value="+992" Title="TJ">Tajikistan (+992)</option>
+                                                        <option value="+255" Title="TZ">Tanzania (+255)</option>
+                                                        <option value="+66" Title="TH">Thailand (+66)</option>
+                                                        <option value="+670" Title="TL">Timor-Leste (+670)</option>
+                                                        <option value="+228" Title="TG">Togo (+228)</option>
+                                                        <option value="+690" Title="TK">Tokelau (+690)</option>
+                                                        <option value="+676" Title="TO">Tonga (+676)</option>
+                                                        <option value="+1868" Title="Title">Trinidad and Tobago (+1868)</option>
+                                                        <option value="+216" Title="TN">Tunisia (+216)</option>
+                                                        <option value="+90" Title="TR">Turkey (+90)</option>
+                                                        <option value="+993" Title="TM">Turkmenistan (+993)</option>
+                                                        <option value="+1649" Title="TC">Turks and Caicos Islands (+1649)</option>
+                                                        <option value="+688" Title="TV">Tuvalu (+688)</option>
+                                                        <option value="+256" Title="UG">Uganda (+256)</option>
+                                                        <option value="+380" Title="UA">Ukraine (+380)</option>
+                                                        <option value="+971" Title="AE">United Arab Emirates (+971)</option>
+                                                        <option value="+44" Title="GB">United Kingdom (+44)</option>
+                                                        <option value="+1" Title="US">United States (+1)</option>
+                                                        <option value="+598" Title="UY">Uruguay (+598)</option>
+                                                        <option value="+1340" Title="VI">US Virgin Islands (+1340)</option>
+                                                        <option value="+998" Title="UZ">Uzbekistan (+998)</option>
+                                                        <option value="+678" Title="VU">Vanuatu (+678)</option>
+                                                        <option value="+58" Title="VE">Venezuela (+58)</option>
+                                                        <option value="+84" Title="VN">Vietnam (+84)</option>
+                                                        <option value="+681" Title="WF">Wallis and Futuna (+681)</option>
+                                                        <option value="+967" Title="YE">Yemen (+967)</option>
+                                                        <option value="+260" Title="ZM">Zambia (+260)</option>
+                                                        <option value="+263" Title="ZW">Zimbabwe (+263)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input asp-for="Mobile" type="number" class="form-control" placeholder="Your Mobile" required="">
+                                                </div>
+                                                @*<label for="login_email" class="col-sm-4 col-form-label">Verify Mobile Number now </label>*@                                            </div>
+                                            <div class="form-group row">
+                                                <label for="Audit" class="col-md-4 col-form-label">Whatsapp Number</label>
+                                                <div class="col-sm-3">
+                                                    <select asp-for="ISD_Whatsapp" class="form-control form-control-sm">
+                                                        <option selected="selected" id="isdcodes" value="">Select</option>
+                                                        <option value="+93" Title="AF">Afghanistan (+93)</option>
+                                                        <option value="+355" Title="AL">Albania (+355)</option>
+                                                        <option value="+213" Title="DZ">Algeria (+213)</option>
+                                                        <option value="+1684" Title="AS">American Samoa (+1684)</option>
+                                                        <option value="+376" Title="AD">Andorra (+376)</option>
+                                                        <option value="+244" Title="AO">Angola (+244)</option>
+                                                        <option value="+1264" Title="AI">Anguilla (+1264)</option>
+                                                        <option value="+672" Title="AQ">Antarctica (+672)</option>
+                                                        <option value="+1268" Title="AG">Antigua and Barbuda (+1268)</option>
+                                                        <option value="+54" Title="AR">Argentina (+54)</option>
+                                                        <option value="+374" Title="AM">Armenia (+374)</option>
+                                                        <option value="+297" Title="AW">Aruba (+297)</option>
+                                                        <option value="+61" Title="AU">Australia (+61)</option>
+                                                        <option value="+43" Title="AT">Austria (+43)</option>
+                                                        <option value="+994" Title="AZ">Azerbaijan (+994)</option>
+                                                        <option value="+1242" Title="BS">Bahamas, The (+1242)</option>
+                                                        <option value="+973" Title="BH">Bahrain (+973)</option>
+                                                        <option value="+880" Title="BD">Bangladesh (+880)</option>
+                                                        <option value="+1246" Title="BB">Barbados (+1246)</option>
+                                                        <option value="+375" Title="BY">Belarus (+375)</option>
+                                                        <option value="+32" Title="BE">Belgium (+32)</option>
+                                                        <option value="+501" Title="BZ">Belize (+501)</option>
+                                                        <option value="+229" Title="BJ">Benin (+229)</option>
+                                                        <option value="+1441" Title="BM">Bermuda (+1441)</option>
+                                                        <option value="+975" Title="BT">Bhutan (+975)</option>
+                                                        <option value="+591" Title="BO">Bolivia (+591)</option>
+                                                        <option value="+387" Title="BA">Bosnia and Herzegovina (+387)</option>
+                                                        <option value="+267" Title="BW">Botswana (+267)</option>
+                                                        <option value="+55" Title="BR">Brazil (+55)</option>
+                                                        <option value="+1284" Title="VG">British Virgin Islands (+1284)</option>
+                                                        <option value="+673" Title="BN">Brunei (+673)</option>
+                                                        <option value="+359" Title="BG">Bulgaria (+359)</option>
+                                                        <option value="+226" Title="BF">Burkina Faso (+226)</option>
+                                                        <option value="+257" Title="BI">Burundi (+257)</option>
+                                                        <option value="+238" Title="CV">Cabo Verde (+238)</option>
+                                                        <option value="+855" Title="KH">Cambodia (+855)</option>
+                                                        <option value="+237" Title="CM">Cameroon (+237)</option>
+                                                        <option value="+1" Title="CA">Canada (+1)</option>
+                                                        <option value="+1345" Title="KY">Cayman Islands (+1345)</option>
+                                                        <option value="+236" Title="CF">Central African Republic (+236)</option>
+                                                        <option value="+235" Title="TD">Chad (+235)</option>
+                                                        <option value="+56" Title="CL">Chile (+56)</option>
+                                                        <option value="+86" Title="CN">China (+86)</option>
+                                                        <option value="+57" Title="CO">Colombia (+57)</option>
+                                                        <option value="+269" Title="KM">Comoros (+269)</option>
+                                                        <option value="+242" Title="CG">Congo (+242)</option>
+                                                        <option value="+243" Title="CD">Congo (DRC) (+243)</option>
+                                                        <option value="+682" Title="CK">Cook Islands (+682)</option>
+                                                        <option value="+506" Title="CR">Costa Rica (+506)</option>
+                                                        <option value="+225" Title="CI">C&#244;te d’Ivoire (+225)</option>
+                                                        <option value="+385" Title="HR">Croatia (+385)</option>
+                                                        <option value="+53" Title="CU">Cuba (+53)</option>
+                                                        <option value="+5999" Title="CW">Cura&#231;ao (+5999)</option>
+                                                        <option value="+357" Title="CY">Cyprus (+357)</option>
+                                                        <option value="+420" Title="CZ">Czech Republic (+420)</option>
+                                                        <option value="+45" Title="DK">Denmark (+45)</option>
+                                                        <option value="+253" Title="DJ">Djibouti (+253)</option>
+                                                        <option value="+1767" Title="DM">Dominica (+1767)</option>
+                                                        <option value="+18" Title="DO">Dominican Republic (+18)</option>
+                                                        <option value="+593" Title="EC">Ecuador (+593)</option>
+                                                        <option value="+20" Title="EG">Egypt (+20)</option>
+                                                        <option value="+503" Title="SV">El Salvador (+503)</option>
+                                                        <option value="+240" Title="GQ">Equatorial Guinea (+240)</option>
+                                                        <option value="+291" Title="ER">Eritrea (+291)</option>
+                                                        <option value="+372" Title="EE">Estonia (+372)</option>
+                                                        <option value="+251" Title="ET">Ethiopia (+251)</option>
+                                                        <option value="+500" Title="FK">Falkland Islands (+500)</option>
+                                                        <option value="+298" Title="FO">Faroe Islands (+298)</option>
+                                                        <option value="+679" Title="FJ">Fiji (+679)</option>
+                                                        <option value="+358" Title="FI">Finland (+358)</option>
+                                                        <option value="+33" Title="FR">France (+33)</option>
+                                                        <option value="+594" Title="GF">French Guiana (+594)</option>
+                                                        <option value="+689" Title="PF">French Polynesia(+689)</option>
+                                                        <option value="+241" Title="GA">Gabon (+241)</option>
+                                                        <option value="+220" Title="GM">Gambia, The (+220)</option>
+                                                        <option value="+995" Title="GE">Georgia (+995)</option>
+                                                        <option value="+49" Title="DE">Germany (+49)</option>
+                                                        <option value="+233" Title="GH">Ghana (+233)</option>
+                                                        <option value="+350" Title="GI">Gibraltar (+350)</option>
+                                                        <option value="+30" Title="GR">Greece (+30)</option>
+                                                        <option value="+299" Title="GL">Greenland (+299)</option>
+                                                        <option value="+1473" Title="GD">Grenada (+1473)</option>
+                                                        <option value="+590" Title="GP">Guadeloupe (+590)</option>
+                                                        <option value="+1671" Title="GU">Guam (+1671)</option>
+                                                        <option value="+502" Title="GT">Guatemala (+502)</option>
+                                                        <option value="+224" Title="GN">Guinea (+224)</option>
+                                                        <option value="+245" Title="GW">Guinea-Bissau (+245)</option>
+                                                        <option value="+592" Title="GY">Guyana (+592)</option>
+                                                        <option value="+509" Title="HT">Haiti (+509)</option>
+                                                        <option value="+3" Title="VA">Holy See (Vatican City) (+3)</option>
+                                                        <option value="+504" Title="HN">Honduras (+504)</option>
+                                                        <option value="+852" Title="HK">Hong Kong SAR (+852)</option>
+                                                        <option value="+36" Title="HU">Hungary (+36)</option>
+                                                        <option value="+354" Title="IS">Iceland (+354)</option>
+                                                        <option value="+91" Title="IN">India (+91)</option>
+                                                        <option value="+62" Title="ID">Indonesia (+62)</option>
+                                                        <option value="+98" Title="IR">Iran (+98)</option>
+                                                        <option value="+964" Title="IQ">Iraq (+964)</option>
+                                                        <option value="+353" Title="IE">Ireland, Republic of (+353)</option>
+                                                        <option value="+972" Title="IL">Israel (+972)</option>
+                                                        <option value="+39" Title="IT">Italy (+39)</option>
+                                                        <option value="+1876" Title="JM">Jamaica (+1876)</option>
+                                                        <option value="+81" Title="JP">Japan (+81)</option>
+                                                        <option value="+962" Title="JO">Jordan (+962)</option>
+                                                        <option value="+7" Title="KZ">Kazakhstan (+7)</option>
+                                                        <option value="+254" Title="KE">Kenya (+254)</option>
+                                                        <option value="+686" Title="KI">Kiribati (+686)</option>
+                                                        <option value="+82" Title="KR">Korea (+82)</option>
+                                                        <option value="+965" Title="KW">Kuwait (+965)</option>
+                                                        <option value="+996" Title="KG">Kyrgyzstan (+996)</option>
+                                                        <option value="+856" Title="LA">Laos (+856)</option>
+                                                        <option value="+371" Title="LV">Latvia (+371)</option>
+                                                        <option value="+961" Title="LB">Lebanon (+961)</option>
+                                                        <option value="+266" Title="LS">Lesotho (+266)</option>
+                                                        <option value="+231" Title="LR">Liberia (+231)</option>
+                                                        <option value="+218" Title="LY">Libya (+218)</option>
+                                                        <option value="+423" Title="LI">Liechtenstein (+423)</option>
+                                                        <option value="+370" Title="LT">Lithuania (+370)</option>
+                                                        <option value="+352" Title="LU">Luxembourg (+352)</option>
+                                                        <option value="+853" Title="MO">Macao SAR (+853)</option>
+                                                        <option value="+389" Title="MK">Macedonia, FYRO (+389)</option>
+                                                        <option value="+261" Title="MG">Madagascar (+261)</option>
+                                                        <option value="+265" Title="MW">Malawi (+265)</option>
+                                                        <option value="+60" Title="MY">Malaysia (+60)</option>
+                                                        <option value="+960" Title="MV">Maldives (+960)</option>
+                                                        <option value="+223" Title="ML">Mali (+223)</option>
+                                                        <option value="+356" Title="MT">Malta (+356)</option>
+                                                        <option value="+692" Title="MH">Marshall Islands (+692)</option>
+                                                        <option value="+596" Title="MQ">Martinique (+596)</option>
+                                                        <option value="+222" Title="MR">Mauritania (+222)</option>
+                                                        <option value="+230" Title="MU">Mauritius (+230)</option>
+                                                        <option value="+269" Title="YT">MayoTitlee (+269)</option>
+                                                        <option value="+52" Title="MX">Mexico (+52)</option>
+                                                        <option value="+691" Title="FM">Micronesia (+691)</option>
+                                                        <option value="+373" Title="MD">Moldova (+373)</option>
+                                                        <option value="+377" Title="MC">Monaco (+377)</option>
+                                                        <option value="+976" Title="MN">Mongolia (+976)</option>
+                                                        <option value="+382" Title="ME">Montenegro (+382)</option>
+                                                        <option value="+1664" Title="MS">Montserrat (+1664)</option>
+                                                        <option value="+212" Title="MA">Morocco (+212)</option>
+                                                        <option value="+258" Title="MZ">Mozambique (+258)</option>
+                                                        <option value="+95" Title="MM">Myanmar (+95)</option>
+                                                        <option value="+264" Title="NA">Namibia (+264)</option>
+                                                        <option value="+674" Title="NR">Nauru (+674)</option>
+                                                        <option value="+977" Title="NP">Nepal (+977)</option>
+                                                        <option value="+31" Title="NL">Netherlands (+31)</option>
+                                                        <option value="+687" Title="NC">New Caledonia (+687)</option>
+                                                        <option value="+64" Title="NZ">New Zealand (+64)</option>
+                                                        <option value="+505" Title="NI">Nicaragua (+505)</option>
+                                                        <option value="+227" Title="NE">Niger (+227)</option>
+                                                        <option value="+234" Title="NG">Nigeria (+234)</option>
+                                                        <option value="+683" Title="NU">Niue (+683)</option>
+                                                        <option value="+1670" Title="MP">Northern Mariana Islands (+1670)</option>
+                                                        <option value="+850" Title="KP">North Korea (+850)</option>
+                                                        <option value="+47" Title="NO">Norway (+47)</option>
+                                                        <option value="+968" Title="OM">Oman (+968)</option>
+                                                        <option value="+92" Title="PK">Pakistan (+92)</option>
+                                                        <option value="+680" Title="PW">Palau (+680)</option>
+                                                        <option value="+970" Title="PS">Palestinian Authority (+970)</option>
+                                                        <option value="+507" Title="PA">Panama (+507)</option>
+                                                        <option value="+675" Title="PG">Papua New Guinea (+675)</option>
+                                                        <option value="+595" Title="PY">Paraguay (+595)</option>
+                                                        <option value="+51" Title="PE">Peru (+51)</option>
+                                                        <option value="+63" Title="PH">Philippines (+63)</option>
+                                                        <option value="+48" Title="PL">Poland (+48)</option>
+                                                        <option value="+351" Title="PT">Portugal (+351)</option>
+                                                        <option value="+1787" Title="PR">Puerto Rico (+1787)</option>
+                                                        <option value="+974" Title="QA">Qatar (+974)</option>
+                                                        <option value="+262" Title="RE">Reunion (+262)</option>
+                                                        <option value="+40" Title="RO">Romania (+40)</option>
+                                                        <option value="+7" Title="RU">Russia (+7)</option>
+                                                        <option value="+250" Title="RW">Rwanda (+250)</option>
+                                                        <option value="+1869" Title="KN">Saint KiTitles and Nevis (+1869)</option>
+                                                        <option value="+1758" Title="LC">Saint Lucia (+1758)</option>
+                                                        <option value="+508" Title="PM">Saint Pierre and Miquelon (+508)</option>
+                                                        <option value="+1784" Title="VC">Saint Vincent and the Grenadines (+1784)</option>
+                                                        <option value="+685" Title="WS">Samoa (+685)</option>
+                                                        <option value="+378" Title="SM">San Marino (+378)</option>
+                                                        <option value="+239" Title="ST">S&#227;o Tom&#233; and Pr&#237;ncipe (+239)</option>
+                                                        <option value="+966" Title="SA">Saudi Arabia (+966)</option>
+                                                        <option value="+221" Title="SN">Senegal (+221)</option>
+                                                        <option value="+381" Title="RS">Serbia (+381)</option>
+                                                        <option value="+248" Title="SC">Seychelles (+248)</option>
+                                                        <option value="+232" Title="SL">Sierra Leone (+232)</option>
+                                                        <option value="+65" Title="SG">Singapore (+65)</option>
+                                                        <option value="+1721" Title="SX">Sint Maarten (+1721)</option>
+                                                        <option value="+421" Title="SK">Slovakia (+421)</option>
+                                                        <option value="+386" Title="SI">Slovenia (+386)</option>
+                                                        <option value="+677" Title="SB">Solomon Islands (+677)</option>
+                                                        <option value="+252" Title="SO">Somalia (+252)</option>
+                                                        <option value="+27" Title="ZA">South Africa (+27)</option>
+                                                        <option value="+34" Title="ES">Spain (+34)</option>
+                                                        <option value="+94" Title="LK">Sri Lanka (+94)</option>
+                                                        <option value="+290" Title="SH">St Helena, Ascension, Tristan da Cunha (+290)</option>
+                                                        <option value="+249" Title="SD">Sudan (+249)</option>
+                                                        <option value="+597" Title="SR">Suriname (+597)</option>
+                                                        <option value="+268" Title="SZ">Swaziland (+268)</option>
+                                                        <option value="+46" Title="SE">Sweden (+46)</option>
+                                                        <option value="+41" Title="CH">Switzerland (+41)</option>
+                                                        <option value="+963" Title="SY">Syria (+963)</option>
+                                                        <option value="+886" Title="TW">Taiwan (+886)</option>
+                                                        <option value="+992" Title="TJ">Tajikistan (+992)</option>
+                                                        <option value="+255" Title="TZ">Tanzania (+255)</option>
+                                                        <option value="+66" Title="TH">Thailand (+66)</option>
+                                                        <option value="+670" Title="TL">Timor-Leste (+670)</option>
+                                                        <option value="+228" Title="TG">Togo (+228)</option>
+                                                        <option value="+690" Title="TK">Tokelau (+690)</option>
+                                                        <option value="+676" Title="TO">Tonga (+676)</option>
+                                                        <option value="+1868" Title="Title">Trinidad and Tobago (+1868)</option>
+                                                        <option value="+216" Title="TN">Tunisia (+216)</option>
+                                                        <option value="+90" Title="TR">Turkey (+90)</option>
+                                                        <option value="+993" Title="TM">Turkmenistan (+993)</option>
+                                                        <option value="+1649" Title="TC">Turks and Caicos Islands (+1649)</option>
+                                                        <option value="+688" Title="TV">Tuvalu (+688)</option>
+                                                        <option value="+256" Title="UG">Uganda (+256)</option>
+                                                        <option value="+380" Title="UA">Ukraine (+380)</option>
+                                                        <option value="+971" Title="AE">United Arab Emirates (+971)</option>
+                                                        <option value="+44" Title="GB">United Kingdom (+44)</option>
+                                                        <option value="+1" Title="US">United States (+1)</option>
+                                                        <option value="+598" Title="UY">Uruguay (+598)</option>
+                                                        <option value="+1340" Title="VI">US Virgin Islands (+1340)</option>
+                                                        <option value="+998" Title="UZ">Uzbekistan (+998)</option>
+                                                        <option value="+678" Title="VU">Vanuatu (+678)</option>
+                                                        <option value="+58" Title="VE">Venezuela (+58)</option>
+                                                        <option value="+84" Title="VN">Vietnam (+84)</option>
+                                                        <option value="+681" Title="WF">Wallis and Futuna (+681)</option>
+                                                        <option value="+967" Title="YE">Yemen (+967)</option>
+                                                        <option value="+260" Title="ZM">Zambia (+260)</option>
+                                                        <option value="+263" Title="ZW">Zimbabwe (+263)</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="number" asp-for="Whatsapp" class="form-control" placeholder="Enter Your WhatsApp Number" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label asp-for="RegistrationIPAddress" class="col-sm-4 col-form-label">Your Registration IP Address</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" asp-for="RegistrationIPAddress" placeholder="Your registration IP Address (Some Part will be Visible to the visitor)">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label asp-for="ReceiveNotification" class="col-sm-4 col-form-label">
+                                                </label>
+                                                <div class="col-sm-8">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" asp-for="ReceiveNotification">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            <p>
+                                                                Do you want to receive important market information, important leads
+                                                                etc. (recommended) (less mailing)
+
+                                                            </p>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label asp-for="AcceptedTermsAndPolicy" class="col-sm-4 col-form-label">
+                                                </label>
+                                                <div class="col-sm-8">
+                                                    <div class="form-check">
+                                                        <input asp-for="AcceptedTermsAndPolicy" class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label" for="defaultCheck1">
+                                                            <p>
+                                                                Selecting this check box shows you have accepted the <strong class="text-red">
+                                                                    <a href="https://cookyourtrade.com/registration.html#">
+
+                                                                        terms
+                                                                        &amp;
+                                                                        conditions
+
+                                                                    </a> ,<a href="https://cookyourtrade.com/registration.html#">user agreement,</a> <a href="https://cookyourtrade.com/registration.html#">
+                                                                        privacy policy
+                                                                        *
+
+                                                                    </a>
+
+                                                                </strong>
+                                                            </p>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row justify-content-center">
+                                                <div class="col-sm-a">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                                                </div>
+                                            </div>
+                                      </form>
+
+                                    <div class="clearfix">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- container-scroller -->
