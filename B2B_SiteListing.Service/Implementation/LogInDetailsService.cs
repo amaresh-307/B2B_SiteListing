@@ -11,25 +11,21 @@ namespace B2B_SiteListing.Service.Implementation
 {
     public class LogInDetailsService : ILogInDetailsService
     {
-        private readonly UserManager<ApplicationUser> _userManager;
         private IMapper _mapper{ get;}
         private readonly IRepository<LogInDetails> _repository;
-        private readonly IHttpContextAccessor _httpContextAccessor;
-
-        public LogInDetailsService(UserManager<ApplicationUser> userManager, IHttpContextAccessor httpContextAccessor, IMapper mapper, IRepository<LogInDetails> repository)
+        private readonly UserService _userService;
+        public LogInDetailsService(IMapper mapper, IRepository<LogInDetails> repository, UserService userService)
         {
             _mapper = mapper;
             _repository = repository;
-            _userManager = userManager;
-            _httpContextAccessor = httpContextAccessor;
+            _userService = userService;
         }
         public async Task<Guid> AddLogInDetails(LogInDetailsViewModel model)
         {
-            var logInDetails = _mapper.Map<LogInDetails>(model);
-            var loggedInUser = await GetCurrentUserAsync();
-            if (loggedInUser is null) throw new NotFoundException("User not found.");
-            var isDataExist = _repository.FindOne(x => x.ApplicationUserId == loggedInUser.Id);
+            var loggedInUser = await _userService.GetCurrentUserAsync();
+            var isDataExist = await GetLogInDetails(loggedInUser.Id);
             if (isDataExist is not null) throw new AlreadyExistException();
+            var logInDetails = _mapper.Map<LogInDetails>(model);
             logInDetails.ApplicationUserId = loggedInUser?.Id;
             logInDetails.CreatedOn = DateTime.Now;
             var res = await _repository.Insert(logInDetails);
@@ -58,7 +54,12 @@ namespace B2B_SiteListing.Service.Implementation
             await _repository.Update(detail);
         }
 
-        private async Task<ApplicationUser> GetCurrentUserAsync() => await _userManager.GetUserAsync(_httpContextAccessor.HttpContext.User);
+        public async Task<LogInDetailsViewModel> GetLogInDetails(string userId)
+        {
+            var isDataExist = await _repository.FindOne(x => x.ApplicationUserId == userId);
+            if (isDataExist is null) return null;
+            return _mapper.Map<LogInDetailsViewModel>(isDataExist);
 
+        }
     }
 }

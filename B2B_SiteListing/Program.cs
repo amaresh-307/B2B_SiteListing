@@ -7,6 +7,7 @@ using B2B_SiteListing.Data.Repositories;
 using B2B_SiteListing.Data.Repositories.Implementations;
 using B2B_SiteListing.Service.Contracts;
 using B2B_SiteListing.Service.Implementation;
+using B2B_SiteListing.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -37,6 +38,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 // Add services to the container.
 builder.Services.AddScoped<IRepository<LogInDetails>, Repository<LogInDetails>>();
 builder.Services.AddTransient<ILogInDetailsService, LogInDetailsService>();
+builder.Services.AddTransient<UserService>();
 
 var app = builder.Build();
 

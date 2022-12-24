@@ -604,10 +604,19 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row justify-content-center">
-                                                <div class="col-sm-a">
+                                                @if (ViewBag.IsUpdate == true)
+                                                {
+                                                <div class="col-sm-auto">
+                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                </div>   
+                                                }
+                                                else
+                                                {
+                                                <div class="col-sm-auto">
                                                     <button type="submit" class="btn btn-primary">Submit</button>
-
                                                 </div>
+                                                }
+                                                
                                             </div>
                                       </form>
 
@@ -626,4 +635,3 @@
         </div>
     </div>
 </div>
-    <!-- container-scroller -->

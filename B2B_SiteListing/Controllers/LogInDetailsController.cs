@@ -1,4 +1,5 @@
-﻿using B2B_SiteListing.Service.Contracts;
+﻿using B2B_SiteListing.Service;
+using B2B_SiteListing.Service.Contracts;
 using B2B_SiteListing.Service.Exceptions;
 using B2B_SiteListing.Service.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -10,13 +11,19 @@ namespace B2B_SiteListing.Controllers
     public class LogInDetailsController : Controller
     {
         private readonly ILogInDetailsService _logInDetailsService;
-        public LogInDetailsController(ILogInDetailsService logInDetailsService)
+        private readonly UserService _userService;
+
+        public LogInDetailsController(ILogInDetailsService logInDetailsService, UserService userService)
         {
             _logInDetailsService = logInDetailsService;
+            _userService = userService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var loggedInUser = await _userService.GetCurrentUserAsync();
+            var isDataExist = await _logInDetailsService.GetLogInDetails(loggedInUser.Id);
+            ViewBag.IsUpdate = isDataExist is not null ? true : false;
+            return isDataExist is not null ? View(isDataExist) : View();
         }
 
         [HttpPost]
